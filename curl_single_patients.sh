@@ -87,7 +87,7 @@ do
 	AGE=$(echo "${i}" | cut -d "," -f 4)
 	HPO_TERMS=$(echo "${i}" | cut -d "," -f 5)
 
-  echo "curl -F "user_token="${token}""\
+	echo "curl -F "user_token="${token}""\
      -F "user_email="${email}""\
      -F "snp_vcf_file=@"/${vcfFileDir}/${VCF}.vcf.gz""\
      -F "gender="${GENDER}""\
@@ -96,7 +96,7 @@ do
      -F "hpo_terms="${HPO_TERMS}""\
      https://moon.diploid.com/samples.json"
 
-  curl -F "user_token="${token}""\
+	curl -F "user_token="${token}""\
      -F "user_email="${email}""\
      -F "snp_vcf_file=@"/${vcfFileDir}/${VCF}.vcf.gz""\
      -F "gender="${GENDER}""\
