@@ -14,7 +14,7 @@ ____________________________________________________________________
 #### Make a new project in Moon
 use ```curl_project.sh``` to generated a new project in  moon.
 
-Each project you make, will have a numer. This number you need to mention in the patient file, so moon will know in which project your vcf's have to go.
+Each project you make, will have a number. This number you need to mention in the patient file, so moon will know in which project your vcf's have to go.
 
 ___________________________________________________________________
 #### Upload single patients
@@ -28,7 +28,7 @@ use ```curl_single_patients.sh``` to upload all patients in your patient file.
 __________________________________________________________________
 #### Upload trio's
 ##### step 1: first upload the parents
-you need a parents file with haeder, looking like this:
+you need a parents file with header, looking like this:
 
 VCFfile,gender,projectNo                                                                    
 VCFfileNoExtention,female,11
@@ -43,12 +43,16 @@ you need python to do this.
 ml Python
 python readJsonFile.py -h
 ```
-to see all the options. The json file is generated in step 1.
+To see all the options. The json file is generated in step 1.
 
-##### step 3: upload the trio
-you need a sample file with the patients and the parents like this:
+You need a sample file with the patients and the parents like this:
 
 file,gender,projectNo,age,hpo_termen,mother,mother_healt,father,father_health
 VCFindex,male,12,3,HPO:0004756;HPO:00045678,VCFmother,healty,VCFfather,affected
 
-use ```curl_upload_trios.sh``` to upload all trio's mentioned in the sample file.
+The output is a sample file with the moon numbers linked to the partets. This file you need in the next step. 
+
+##### step 3: upload the trio
+
+
+use ```curl_upload_trios.sh``` to upload all trio's mentioned in the sample file from step 2.
