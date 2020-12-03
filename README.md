@@ -8,6 +8,8 @@ You also need your personal token and corresponing mail adres known by moon in o
 see https://moon.diploid.com/account/api for your token and other information concerning the moon API.
 
 All scripts come with a --help function. type ``` bash ${script}.sh -h ``` to see all variables needed.
+All vcf files mention in a sample file are without extention. 
+The scripts assume the extention is vcf.gz.
 ____________________________________________________________________
 #### Make a new project in Moon
 use ```curl_projects.sh``` to generated a new project in  moon.
@@ -48,8 +50,6 @@ you need a sample file with the patients and the parents like this:
 
 file,gender,projectNo,age,hpo_termen,mother,mother_healt,father,father_health
 VCFindex,male,12,3,HPO:0004756;HPO:00045678,VCFmother,healty,VCFfather,affected
-
-All vcf files mention in a sample file are without extention.
 
 use ```curl_upload_trio.sh``` to upload all trio's mentioned in the sample file.
 
