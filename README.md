@@ -12,7 +12,7 @@ All vcf files mention in a sample file are without extention.
 The scripts assume the extention is vcf.gz.
 ____________________________________________________________________
 #### Make a new project in Moon
-use ```curl_projects.sh``` to generated a new project in  moon.
+use ```curl_project.sh``` to generated a new project in  moon.
 
 Each project you make, will have a numer. This number you need to mention in the patient file, so moon will know in which project your vcf's have to go.
 
