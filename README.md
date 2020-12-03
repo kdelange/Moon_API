@@ -51,7 +51,7 @@ you need a sample file with the patients and the parents like this:
 file,gender,projectNo,age,hpo_termen,mother,mother_healt,father,father_health
 VCFindex,male,12,3,HPO:0004756;HPO:00045678,VCFmother,healty,VCFfather,affected
 
-use ```curl_upload_trio.sh``` to upload all trio's mentioned in the sample file.
+use ```curl_upload_trios.sh``` to upload all trio's mentioned in the sample file.
 
 
 
