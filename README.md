@@ -1,7 +1,7 @@
 # Moon_API
 https://moon.diploid.com/
 
-Moon is a online tool to filter VCF files using their knoledge base and patient HPO terms or a custom filter tree. The output will be a short list of most likely pathogenic varints. Also trio's can be analyzed.
+Moon is an online tool to filter VCF files using the "knoledge base" from moon and patient HPO terms or a custom filter tree. The output will be a short list of most likely pathogenic varints. Also trio's can be analyzed.
 
 In order to use the moon API to upload multiple patients or trio's, a few scripts are needed. 
 You also need your personal token and corresponing mail adres known by moon in order to use the API, these are linked to your moon account.
@@ -9,7 +9,7 @@ see https://moon.diploid.com/account/api for your token and other information co
 
 All scripts come with a --help function. type ``` bash ${script}.sh -h ``` to see all variables needed.
 All vcf files mention in a sample file are without extention. 
-The scripts assume the extention is vcf.gz.
+The scripts assume the extention is .vcf.gz.
 ____________________________________________________________________
 #### Make a new project in Moon
 use ```curl_project.sh``` to generated a new project in  moon.
@@ -23,7 +23,7 @@ You need a patient file, with header, looking like this:
 file,gender,projectNo,age,HPOterms                                                                                    
 VCFfileNoExtention,female,11,34,HPO:0004756;HPO:00045678
 
-use ```curl_single_patients.sh``` to upload all patient in your patient file.
+use ```curl_single_patients.sh``` to upload all patients in your patient file.
 
 __________________________________________________________________
 #### Upload trio's
@@ -33,9 +33,9 @@ you need a parents file with haeder, looking like this:
 VCFfile,gender,projectNo                                                                    
 VCFfileNoExtention,female,11
 
-use ```curl_upload_parents.sh``` to uplaod all parents in your parents file.
+use ```curl_upload_parents.sh``` to upload all parents in your parents file.
 
-You will get back a file in json format containing all files and moon numbers. To upload trio's you need the moon numeber for the parents.
+You will get back a file in json format containing all files and moon numbers. To upload trio's you need the moon numbers for the parents.
 
 ##### step 2: Link the moon number to the parent VCF id.
 you need python to do this.
@@ -52,15 +52,3 @@ file,gender,projectNo,age,hpo_termen,mother,mother_healt,father,father_health
 VCFindex,male,12,3,HPO:0004756;HPO:00045678,VCFmother,healty,VCFfather,affected
 
 use ```curl_upload_trios.sh``` to upload all trio's mentioned in the sample file.
-
-
-
-
-
-
-
-
-
-
-
-
