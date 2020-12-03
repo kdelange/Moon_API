@@ -94,15 +94,15 @@ do
 	GENDER=$(echo "${i}" | cut -d "," -f 2)
 	PROJECT=$(echo "${i}" | cut -d "," -f 3)
 
-	echo "curl -F "user_token=$"${token}""\
-     -F "user_email=$"${email}""\
+	echo "curl -F "user_token="${token}""\
+     -F "user_email="${email}""\
      -F "snp_vcf_file=@/"${vcfFileDir}/${VCF}.vcf.gz""\
      -F "gender="${GENDER}""\
      -F "project_id="${PROJECT}""\
      https://moon.diploid.com/samples.json"
 
-	curl -F "user_token=$"{token}""\
-     -F "user_email=$"{email}""\
+	curl -F "user_token="${token}""\
+     -F "user_email="${email}""\
      -F "snp_vcf_file=@/"${vcfFileDir}/${VCF}.vcf.gz""\
      -F "gender="${GENDER}""\
      -F "project_id="${PROJECT}""\
