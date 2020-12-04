@@ -10,6 +10,10 @@ see https://moon.diploid.com/account/api for your token and other information co
 All scripts come with a --help function. type ``` bash ${script}.sh -h ``` to see all variables needed.
 All vcf files mention in a sample file are without extention. 
 The scripts assume the extention is .vcf.gz.
+___________________________________________________________________
+#### Rename VCF files
+use ``` renameVCF.sh ``` to pseudomize your VCF files, if you like.
+
 ____________________________________________________________________
 #### Make a new project in Moon
 use ```curl_project.sh``` to generated a new project in  moon.
