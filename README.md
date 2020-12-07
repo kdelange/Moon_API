@@ -54,7 +54,7 @@ You need a sample file with the patients and the parents like this:
 file,gender,projectNo,age,hpo_termen,mother,mother_healt,father,father_health
 VCFindex,male,12,3,HPO:0004756;HPO:00045678,VCFmother,healty,VCFfather,affected
 
-The output is a sample file with the moon numbers linked to the partets. This file you need in the next step. 
+The output is a sample file with the moon numbers linked to the parents. This file you need in the next step. 
 
 ##### step 3: upload the trio
 

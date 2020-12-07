@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -e
+set -u
+
 function showHelp() {
         #
         # Display commandline help on STDOUT.

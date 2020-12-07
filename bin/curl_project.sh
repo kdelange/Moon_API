@@ -1,10 +1,15 @@
+#!/bin/bash
+
+set -e
+set -u
+
 function showHelp() {
 	#
 	# Display commandline help on STDOUT.
 	#
 	cat <<EOH
 ======================================================================================================================
-Script to start arrayConversionTool  automagicly when array scanner is finished, and corresponding samplesheet is available.
+Script to create project in Moon.
 Usage:
 	$(basename "${0}") OPTIONS
 Options:
