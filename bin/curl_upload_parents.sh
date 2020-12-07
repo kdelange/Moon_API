@@ -100,20 +100,20 @@ do
 	PROJECT=$(echo "${i}" | cut -d "," -f 3)
 
 	echo "curl -F "user_token="${token}""\
-     -F "user_email="${email}""\
-     -F "snp_vcf_file=@/"${vcfFileDir}/${VCF}.vcf.gz""\
-     -F "gender="${GENDER}""\
-     -F "project_id="${PROJECT}""\
-     https://moon.diploid.com/samples.json"
+	-F "user_email="${email}""\
+	-F "snp_vcf_file=@/"${vcfFileDir}/${VCF}.vcf.gz""\
+	-F "gender="${GENDER}""\
+	-F "project_id="${PROJECT}""\
+	https://moon.diploid.com/samples.json"
 
 	curl -F "user_token="${token}""\
-     -F "user_email="${email}""\
-     -F "snp_vcf_file=@/"${vcfFileDir}/${VCF}.vcf.gz""\
-     -F "gender="${GENDER}""\
-     -F "project_id="${PROJECT}""\
-     https://moon.diploid.com/samples.json
+	-F "user_email="${email}""\
+	-F "snp_vcf_file=@/"${vcfFileDir}/${VCF}.vcf.gz""\
+	-F "gender="${GENDER}""\
+	-F "project_id="${PROJECT}""\
+	https://moon.diploid.com/samples.json
 
 done
 
-echo "curl -X GET -d "user_token="${token}"" -d "user_email="${email}"" https://moon.diploid.com/samples.json >> "${MoonJson}""
-curl -X GET -d "user_token="${token}"" -d "user_email="${email}"" https://moon.diploid.com/samples.json >> "${MoonJson}"
+echo "curl -X GET -d user_token=${token} -d user_email=${email} https://moon.diploid.com/samples.json >> ${MoonJson}"
+curl -X GET -d "user_token=${token}" -d "user_email=${email}" https://moon.diploid.com/samples.json >> "${MoonJson}"

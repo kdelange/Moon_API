@@ -33,8 +33,8 @@ EOH
 #
 # Get commandline arguments.
 #
-declare project=''
-while getopts "d:p:m:t:e:h" opt
+
+while getopts "d:m:t:e:h" opt
 do
 	case "${opt}" in
 		h)
@@ -51,6 +51,9 @@ do
 			;;
 		e)
 			email="${OPTARG}"
+			;;
+		*)
+			"Unhandled option. Try $(basename "${0}") -h for help."
 			;;
 	esac
 done
@@ -99,24 +102,24 @@ do
 #	echo "FATHERID:FATHERHEALTH: ${FATHERID}:${FATHERHEALTH}"
 #	echo "${FAMILY_MEMBERS}"
 
-	echo "curl -F "user_token="${token}""\
-     -F "user_email="${email}""\
-     -F "snp_vcf_file=@/"${vcfFileDir}/${VCF}".vcf.gz"\
-     -F "gender="${GENDER}""\
-     -F "project_id="${PROJECT}""\
-     -F "age="${AGE}""\
-     -F "hpo_terms="${HPO_TERMS}""\
-     -F "family_members="${FAMILY_MEMBERS}""	
-     https://moon.diploid.com/samples.json"
+	echo "curl -F "user_token=${token}"\
+	-F "user_email=${email}"\
+	-F "snp_vcf_file=@/${vcfFileDir}/${VCF}.vcf.gz"\
+	-F "gender=${GENDER}"\
+	-F "project_id=${PROJECT}"\
+	-F "age=${AGE}"\
+	-F "hpo_terms=${HPO_TERMS}"\
+	-F "family_members=${FAMILY_MEMBERS}"
+	https://moon.diploid.com/samples.json"
 
-	curl -F "user_token="${token}""\
-     -F "user_email="${email}""\
-     -F "snp_vcf_file=@/"${vcfFileDir}/${VCF}".vcf.gz"\
-     -F "gender="${GENDER}""\
-     -F "project_id="${PROJECT}""\
-     -F "age="${AGE}""\
-     -F "hpo_terms="${HPO_TERMS}""\
-     -F "family_members="${FAMILY_MEMBERS}""	
-     https://moon.diploid.com/samples.json
+	curl -F "user_token=${token}"\
+	-F "user_email=${email}"\
+	-F "snp_vcf_file=@/${vcfFileDir}/${VCF}.vcf.gz"\
+	-F "gender=${GENDER}"\
+	-F "project_id=${PROJECT}"\
+	-F "age=${AGE}"\
+	-F "hpo_terms=${HPO_TERMS}"\
+	-F "family_members=${FAMILY_MEMBERS}"
+	https://moon.diploid.com/samples.json
 
 done

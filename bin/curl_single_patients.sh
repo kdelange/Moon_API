@@ -33,7 +33,7 @@ EOH
 #
 # Get commandline arguments.
 #
-declare project=''
+
 while getopts "d:p:t:e:h" opt
 do
 	case "${opt}" in
@@ -51,6 +51,9 @@ do
 			;;
 		e)
 			email="${OPTARG}"
+			;;
+		*)
+			"Unhandled option. Try $(basename "${0}") -h for help."
 			;;
 	esac
 done
@@ -92,22 +95,22 @@ do
 	AGE=$(echo "${i}" | cut -d "," -f 4)
 	HPO_TERMS=$(echo "${i}" | cut -d "," -f 5)
 
-	echo "curl -F "user_token="${token}""\
-     -F "user_email="${email}""\
-     -F "snp_vcf_file=@"/${vcfFileDir}/${VCF}.vcf.gz""\
-     -F "gender="${GENDER}""\
-     -F "project_id="${PROJECT}""\
-     -F "age="${AGE}""\
-     -F "hpo_terms="${HPO_TERMS}""\
-     https://moon.diploid.com/samples.json"
+	echo "curl -F "user_token=${token}"\
+	-F "user_email=${email}"\
+	-F "snp_vcf_file=@/${vcfFileDir}/${VCF}.vcf.gz"\
+	-F "gender=${GENDER"\
+	-F "project_id=${PROJECT}"\
+	-F "age=${AGE}"\
+	-F "hpo_terms="${HPO_TERMS}"\
+	https://moon.diploid.com/samples.json"
 
-	curl -F "user_token="${token}""\
-     -F "user_email="${email}""\
-     -F "snp_vcf_file=@"/${vcfFileDir}/${VCF}.vcf.gz""\
-     -F "gender="${GENDER}""\
-     -F "project_id="${PROJECT}""\
-     -F "age="${AGE}""\
-     -F "hpo_terms="${HPO_TERMS}""\
-     https://moon.diploid.com/samples.json
+	curl -F "user_token=${token}"\
+	-F "user_email=${email}"\
+	-F "snp_vcf_file=@/${vcfFileDir}/${VCF}.vcf.gz"\
+	-F "gender=${GENDER}"\
+	-F "project_id=${PROJECT}"\
+	-F "age=${AGE}"\
+	-F "hpo_terms=${HPO_TERMS}"\
+	https://moon.diploid.com/samples.json
 
 done

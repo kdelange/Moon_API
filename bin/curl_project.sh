@@ -48,6 +48,10 @@ do
 		e)
 			email="${OPTARG}"
 			;;
+		*)
+			"Unhandled option. Try $(basename "${0}") -h for help."
+			;;
+
 	esac
 done
 
@@ -59,25 +63,25 @@ then
 	echo 'Must specify a project name with -p.'
 	exit 0
 fi
+
 if [[ -z "${token:-}" ]]
 then
 	echo 'Must specify your user token from moon with -t.'
 	exit 0
 fi
+
 if [[ -z "${email:-}" ]]
 then
 	echo 'Must specify your email adres used by moon with -e.'
 	exit 0
 fi
 
+echo "curl -F "user_token=${token}"\
+	-F "user_email=${email}"\
+	-F "project[name]=${project}"\
+	https://moon.diploid.com/projects.json"
 
-
-echo "curl -F "user_token="${token}""\
-   -F "user_email="${email}""\
-   -F "project[name]="${project}""\
-   https://moon.diploid.com/projects.json"
-
-curl -F "user_token="${token}""\
-   -F "user_email="${email}""\
-   -F "project[name]="${project}""\
-   https://moon.diploid.com/projects.json
+curl -F "user_token=${token}"\
+	-F "user_email=${email}"\
+	-F "project[name]=${project}"\
+	https://moon.diploid.com/projects.json
