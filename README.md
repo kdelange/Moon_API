@@ -66,5 +66,5 @@ ____________________________________________________________________
 #### start the analysis
 
 ```
-curl -F "user_token=${MoonToken}" -F "user_email=${mailAdres}" https://moon.diploid.com/samples/${sampleNumbers}/analysis.json
+curl -F "user_token=${MoonToken}" -F "user_email=${mailAdres}" https://moon.diploid.com/samples/{sampleNumbers..sampleNumbers}/analysis.json
 ```
