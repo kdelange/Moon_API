@@ -51,7 +51,7 @@ To see all the options. The json file is generated in step 1.
 
 You need a sample file with the patients and the parents like this:
 
-file,gender,projectNo,age,hpo_termen,mother,mother_healt,father,father_health
+file,gender,projectNo,age,hpo_terms,mother,mother_health,father,father_health
 VCFindex,male,12,3,HPO:0004756;HPO:00045678,VCFmother,healty,VCFfather,affected
 
 The output is a sample file with the moon numbers linked to the parents. This file you need in the next step. 
