@@ -119,7 +119,7 @@ do
 	-F "project_id=${PROJECT}"\
 	-F "age=${AGE}"\
 	-F "hpo_terms=${HPO_TERMS}"\
-	-F "family_members=${FAMILY_MEMBERS}"
+	-F "family_members=${FAMILY_MEMBERS}"\
 	https://moon.diploid.com/samples.json
 
 done
