@@ -60,3 +60,11 @@ The output is a sample file with the moon numbers linked to the parents. This fi
 
 
 use ```curl_upload_trios.sh``` to upload all trio's mentioned in the sample file from step 2.
+
+____________________________________________________________________
+
+#### start the analysis
+
+```
+curl -F "user_token=${MoonToken}" -F "user_email=${mailAdres}" https://moon.diploid.com/samples/${sampleNumbers}/analysis.json
+```
