@@ -98,10 +98,10 @@ do
 	echo "curl -F "user_token=${token}"\
 	-F "user_email=${email}"\
 	-F "snp_vcf_file=@/${vcfFileDir}/${VCF}.vcf.gz"\
-	-F "gender=${GENDER"\
+	-F "gender=${GENDER}"\
 	-F "project_id=${PROJECT}"\
 	-F "age=${AGE}"\
-	-F "hpo_terms="${HPO_TERMS}"\
+	-F "hpo_terms=${HPO_TERMS}"\
 	https://moon.diploid.com/samples.json"
 
 	curl -F "user_token=${token}"\
